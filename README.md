@@ -64,3 +64,14 @@ git push
 ```
 git log --oneline
 ```
+
+
+###Файл HEAD (англ. «голова», «головной») — один из служебных файлов папки .git. Он указывает на коммит, который сделан последним (то есть на самый новый).
+
+#Статусы файлов в Git
+```mermaid
+untracked -- "git add" --> staged;
+modified -- "git add" --> staged -- "git commit" --> tracked;
+modified <-- "Изменения" -- staged;
+modified <-- "Изменения" -- tracked;
+```
