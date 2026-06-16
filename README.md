@@ -70,8 +70,11 @@ git log --oneline
 
 #Статусы файлов в Git
 ```mermaid
-untracked -- "git add" --> staged;
-modified -- "git add" --> staged -- "git commit" --> tracked;
-modified <-- "Изменения" -- staged;
-modified <-- "Изменения" -- tracked;
+stateDiagram-v2
+    [*] --> untracked
+    untracked --> staged: git add
+    staged --> tracked: git commit
+    tracked --> modified: Изменения
+    staged --> modified: Изменения
+    modified --> staged: git add
 ```
